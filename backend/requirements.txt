@@ -1,0 +1,16 @@
+torch>=2.11.0
+torchvision>=0.26.0
+Pillow
+numpy
+fastapi
+uvicorn[standard]
+python-multipart
+
+fastapi
+uvicorn
+torch
+torchvision
+ultralytics
+pillow
+reportlab
+huggingface_hub

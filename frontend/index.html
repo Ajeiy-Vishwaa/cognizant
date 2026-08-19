@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Guard AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-brand">Vehicle Guard AI</div>
+        <div class="user-nav" id="userNav" style="display: none;">
+            <span id="userEmailDisplay">user@example.com</span>
+            <button id="logoutBtn" class="btn-secondary" type="button">Log Out</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Authentication View -->
+        <section id="authView" class="auth-card">
+            <div class="tabs">
+                <button type="button" id="tabLogin" class="tab-btn active">Log In</button>
+                <button type="button" id="tabSignup" class="tab-btn">Sign Up</button>
+            </div>
+
+            <h2 id="authTitle">Welcome Back</h2>
+            <p id="authSub" class="subtitle">Sign in to access damage & fraud analysis</p>
+
+            <p id="authError" class="error-msg" style="display: none;"></p>
+
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" id="authSubmitBtn" class="btn-primary">Log In</button>
+            </form>
+        </section>
+
+        <!-- Main Dashboard View -->
+        <section id="dashboardView" class="dashboard-card" style="display: none;">
+            <h2>Vehicle Damage Inspection</h2>
+            <p class="subtitle">Upload a vehicle photo to evaluate structural damage and fraud risk score.</p>
+
+            <!-- File Upload Dropzone -->
+            <div id="dropZone" class="drop-zone">
+                <div class="drop-icon">📷</div>
+                <p>Drag & drop vehicle image here or <span class="browse-link">browse file</span></p>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            </div>
+
+            <!-- Uploaded Image Preview -->
+            <div id="previewSection" style="display: none;">
+                <div class="image-wrapper">
+                    <img id="imagePreview" alt="Vehicle Claim Preview">
+                </div>
+                <button id="analyzeBtn" class="btn-primary" type="button">Analyze Claim Image</button>
+            </div>
+
+            <!-- Inspection Results Container -->
+            <div id="resultSection" class="results-card" style="display: none;">
+                <h3>Inspection Results</h3>
+                
+                <div class="result-row">
+                    <span>Assessment:</span>
+                    <strong id="statusBadge">--</strong>
+                </div>
+                <div class="result-row">
+                    <span>Fraud Risk Score:</span>
+                    <strong id="scoreValue">--</strong>
+                </div>
+
+                <!-- Damage Severity Display -->
+                <div class="result-row" id="damageRow" style="display: none;">
+                    <span>Damage Severity:</span>
+                    <strong id="damageValue">--</strong>
+                </div>
+                
+                <!-- YOLO Bounding Box Preview -->
+                <div id="boundingContainer" style="display: none; margin-top: 15px;">
+                    <h4>Damage Localization (YOLO):</h4>
+                    <img id="annotatedPreview" alt="YOLO Damage Localization" style="max-width: 100%; border-radius: 8px; margin-top: 8px; border: 1px solid #e5e7eb;" />
+                </div>
+
+                <!-- ConvNeXt Grad-CAM Preview -->
+                <div id="gradcamContainer" style="display: none; margin-top: 15px;">
+                    <h4>Fraud Attention (ConvNeXt Grad-CAM):</h4>
+                    <img id="gradcamPreview" alt="ConvNeXt Grad-CAM" style="max-width: 100%; border-radius: 8px; margin-top: 8px; border: 1px solid #e5e7eb;" />
+                </div>
+
+                <button id="downloadReportBtn" class="btn-secondary" type="button" style="margin-top: 20px;">Download PDF Report</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Imports -->
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

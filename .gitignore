@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Local environment and databases
+.venv/
+venv/
+.env
+*.db
+
+# ML model weights (store these outside normal Git or use Git LFS)
+*.pth
+*.pt
+
+# Generated runtime output
+**/artifacts/
