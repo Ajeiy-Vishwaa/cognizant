@@ -1,17 +1,12 @@
-torch>=2.11.0
-torchvision>=0.26.0
-Pillow
-numpy
-fastapi
-uvicorn[standard]
-python-multipart
-
-fastapi
-uvicorn
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
-ultralytics
+sqlalchemy
 pillow
+numpy
+fastapi
+python-multipart
+uvicorn
+ultralytics
 reportlab
 huggingface_hub
-sqlalchemy
