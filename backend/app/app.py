@@ -1,7 +1,13 @@
+import sys
+from pathlib import Path
+
+# Add the directory containing 'app' to system path
+sys.path.append(str(Path(__file__).resolve().parent))
+
 import gradio as gr
 from app.main import app as fastapi_app
 
-# Mounts your FastAPI app into Gradio to run on Hugging Face's free 16GB RAM server
+# Mount FastAPI inside Gradio
 app = gr.mount_gradio_app(
     fastapi_app, 
     gr.Interface(lambda x: x, "text", "text"), 
