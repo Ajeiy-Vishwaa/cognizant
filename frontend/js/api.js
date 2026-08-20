@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+const API_BASE = "/api/v1";
 
 async function loginUser(email, password) {
     const res = await fetch(`${API_BASE}/auth/login`, {

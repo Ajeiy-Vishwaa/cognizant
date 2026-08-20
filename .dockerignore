@@ -5,6 +5,5 @@ __pycache__
 *.py[cod]
 *.db
 artifacts
-frontend
 models
 node_modules

@@ -9,6 +9,7 @@ from pathlib import Path
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends, status, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, EmailStr
 from PIL import Image
 import torch
@@ -322,3 +323,6 @@ async def analyze_and_report(
     except Exception as e:
         print(f"[API Error] /analyze-and-report failed: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
