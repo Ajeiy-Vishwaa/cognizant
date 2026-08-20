@@ -15,7 +15,7 @@ import torch
 from torchvision import transforms
 from sqlalchemy.orm import Session
 
-from app.model import load_model
+from app.model import model as convnext_model
 from app.damage_detector import VehicleDamageDetector
 from app.database import get_db, User, Claim
 from app.utils import preprocess_image, compute_phash_from_bytes, check_duplicate_claim
@@ -86,8 +86,7 @@ async def login(credentials: AuthCredentials, db: Session = Depends(get_db)):
         "email": user.email
     }
 
-# Model initialization
-convnext_model = load_model()
+# Reuse the model loaded by app.model instead of allocating a second copy.
 for param in convnext_model.parameters():
     param.requires_grad = True
 
