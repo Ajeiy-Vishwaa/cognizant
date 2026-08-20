@@ -1,7 +1,0 @@
-name = "vehicle-guard-api"
-main = "worker.js"
-compatibility_date = "2026-08-20"
-
-[vars]
-# Set this to the publicly reachable FastAPI deployment before publishing.
-BACKEND_URL = "http://127.0.0.1:8000"
