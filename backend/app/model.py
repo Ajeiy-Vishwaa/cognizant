@@ -5,9 +5,13 @@ import torch.nn as nn
 from PIL import Image
 from torchvision import models, transforms
 
-MODEL_PATH = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "models", "convnext_final_development_best.pth")
+from huggingface_hub import hf_hub_download
+
+MODEL_PATH = hf_hub_download(
+    repo_id="Ajeiy-vishwaa/cognizant-convnext",
+    filename="convnext_final_development_best.pth"
 )
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
