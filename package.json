@@ -1,0 +1,7 @@
+{
+  "name": "vehicle-guard-frontend",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  }
+}
