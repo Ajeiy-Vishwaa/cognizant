@@ -1,12 +1,13 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
+fastapi
+uvicorn
+ultralytics
 sqlalchemy
 pillow
 numpy
-fastapi
 python-multipart
-uvicorn
-ultralytics
 reportlab
 huggingface_hub
+gradio
